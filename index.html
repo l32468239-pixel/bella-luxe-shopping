@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#21151d">
+<title>BELLA LUXE SHOPPING | Tienda en línea</title>
+<style>
+:root{--ink:#251922;--wine:#6f344d;--gold:#c6a15b;--cream:#fbf7f1;--muted:#756b72;--line:#eadfdf;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+header{background:linear-gradient(120deg,#21151d,#4b2638);color:white;padding:24px 5vw 20px;border-bottom:3px solid var(--gold)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:14px}.logo{width:58px;height:58px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:22px}.brand h1{font-family:Georgia,serif;letter-spacing:2px;font-size:clamp(20px,4vw,30px);margin:0}.brand p{margin:5px 0 0;color:#e8d8d9;font-size:12px;letter-spacing:2px}.cart-pill{border:1px solid var(--gold);padding:11px 15px;border-radius:30px;color:#fff;background:#ffffff10;font-weight:bold;cursor:pointer}
+.hero{padding:30px 0 8px;max-width:850px}.eyebrow{color:#e3c888;text-transform:uppercase;letter-spacing:3px;font-size:11px}.hero h2{font-family:Georgia,serif;font-size:clamp(27px,5vw,46px);font-weight:normal;line-height:1.1;margin:10px 0}.hero p{color:#e9dfe4;max-width:620px;line-height:1.6;margin-bottom:0}
+main{max-width:1200px;margin:auto;padding:24px 16px 55px}.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px}.benefit{background:white;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;font-size:13px}.benefit b{display:block;color:var(--wine);margin-bottom:4px}
+.tools{background:white;border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;grid-template-columns:minmax(180px,1fr) minmax(160px,250px) auto;gap:10px;align-items:center;box-shadow:0 5px 20px #4b26380b}
+input,select,button,textarea{font:inherit}input,select{width:100%;padding:12px;border:1px solid #d9cbd0;border-radius:9px;background:#fff;color:var(--ink)}button{cursor:pointer}.btn{border:0;background:var(--wine);color:white;border-radius:9px;padding:12px 16px;font-weight:bold}.btn.gold{background:var(--gold);color:#241821}.section-title{font-family:Georgia,serif;font-size:27px;font-weight:normal;margin:28px 0 6px}.sub{color:var(--muted);font-size:13px;margin:0 0 16px}.meta{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin:16px 0}.page-label{font-size:13px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.product{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 5px 18px #3b24320a}.product-art{height:190px;background:linear-gradient(135deg,#f4e9e8,#fbf7f1);display:grid;place-items:center;position:relative;color:var(--wine)}.product-art img{width:100%;height:100%;object-fit:contain;padding:10px}.placeholder{font-family:Georgia,serif;font-size:36px;color:#b59a70}.category-tag{position:absolute;top:10px;left:10px;background:#fffdf8dd;color:var(--wine);border:1px solid #ead9d2;border-radius:20px;padding:5px 9px;font-size:10px;text-transform:uppercase;letter-spacing:.8px}.product-body{padding:14px;display:flex;flex-direction:column;gap:9px;flex:1}.product-body h3{font-family:Georgia,serif;font-size:18px;font-weight:normal;margin:0}.product-body p{font-size:12px;line-height:1.5;color:var(--muted);margin:0}.product-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:5px}.price{font-weight:bold;color:var(--wine);font-size:17px}.small{font-size:11px;color:var(--muted)}.add{border:1px solid var(--wine);color:var(--wine);background:white;border-radius:8px;padding:9px 10px;font-size:12px;font-weight:bold}.add:hover{background:var(--wine);color:white}.pagination{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:22px 0}.pagination button{border:1px solid var(--line);background:#fff;color:var(--wine);border-radius:8px;padding:9px 12px}.pagination button:disabled{opacity:.4;cursor:default}.pagination input{width:74px;padding:8px;text-align:center}.empty{padding:32px;text-align:center;background:white;border-radius:12px;color:var(--muted);grid-column:1/-1}
+footer{background:#21151d;color:#e9dfe4;text-align:center;padding:25px 15px;font-size:12px;line-height:1.7}footer strong{color:#e3c888;letter-spacing:2px}
+.overlay{position:fixed;inset:0;background:#180e18a6;display:none;z-index:20;justify-content:flex-end}.overlay.open{display:flex}.drawer{background:var(--cream);height:100%;width:min(480px,100%);overflow:auto;padding:20px;box-shadow:-10px 0 40px #0002}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px}.drawer h2{font-family:Georgia,serif;font-weight:normal}.close{border:1px solid var(--line);border-radius:50%;width:38px;height:38px;background:#fff}.cart-row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:13px 0;border-bottom:1px solid var(--line)}.cart-row strong{font-size:14px}.cart-row small{display:block;color:var(--muted);margin-top:5px}.qty{display:flex;align-items:center;gap:8px;margin-top:8px}.qty button{border:1px solid var(--line);background:white;border-radius:6px;padding:3px 9px}.remove{color:#9a4c5c;background:none;border:0;font-size:12px}.total{display:flex;justify-content:space-between;font-size:19px;font-weight:bold;padding:18px 0}.form-block{margin:13px 0}.form-block label{display:block;font-size:12px;font-weight:bold;margin-bottom:6px}.form-block textarea{width:100%;padding:12px;border:1px solid #d9cbd0;border-radius:9px;min-height:70px}.checkout-note{background:#f2e8e6;border-radius:10px;padding:12px;font-size:12px;line-height:1.5;margin:12px 0}.send{width:100%;padding:14px;background:#247b48;color:white;border:0;border-radius:10px;font-weight:bold}.hint{font-size:11px;color:var(--muted);line-height:1.5}
+@media(max-width:650px){.tools{grid-template-columns:1fr}.benefits{grid-template-columns:1fr}.product-art{height:145px}.product-body{padding:11px}.product-body h3{font-size:16px}.product-bottom{align-items:flex-start;flex-direction:column}.add{width:100%}.grid{gap:10px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="top">
+  <div class="brand"><div class="logo">BL</div><div><h1>BELLA LUXE SHOPPING</h1><p>DETALLES QUE ENAMORAN</p></div></div>
+  <button class="cart-pill" onclick="openCart()">♧ Mi carrito (<span id="cartCount">0</span>)</button>
+ </div>
+ <div class="hero"><div class="eyebrow">Elegancia para cada ocasión</div><h2>Encuentra tu próximo favorito.</h2><p>Explora nuestra colección de joyería de oro, plata y maquillaje original. Agrega tus productos al carrito y envía tu pedido por WhatsApp con pago contra entrega, sujeto a confirmación.</p></div>
+</header>
+<main>
+ <div class="benefits"><div class="benefit"><b>✦ Colecciones</b>Oro · Plata · Maquillaje</div><div class="benefit"><b>⌕ Búsqueda rápida</b>Busca por nombre o código</div><div class="benefit"><b>♡ Pedido por WhatsApp</b>Pago contra entrega</div></div>
+ <div class="tools">
+  <input id="search" type="search" placeholder="Buscar producto, nombre o código…" aria-label="Buscar productos">
+  <select id="category" aria-label="Filtrar por sección"><option value="all">Todas las secciones</option><option value="oro">Joyería oro</option><option value="plata">Joyería plata</option><option value="maquillaje">Maquillaje original</option></select>
+  <button class="btn" onclick="clearSearch()">Limpiar búsqueda</button>
+ </div>
+ <h2 class="section-title">Catálogo de productos</h2>
+ <p class="sub">500 espacios de catálogo editables · 2 productos por página · Los precios y las fotos se pueden personalizar.</p>
+ <div class="meta"><span class="page-label" id="resultsLabel">Mostrando productos 1–2 de 500</span><span class="page-label" id="pageInfo">Página 1 de 250</span></div>
+ <div class="grid" id="products"></div>
+ <div class="pagination" id="pagination">
+  <button id="firstBtn" onclick="goPage(1)">« Primera</button><button id="prevBtn" onclick="goPage(page-1)">‹ Anterior</button><span>Página</span><input id="pageInput" type="number" min="1" max="250" value="1" aria-label="Número de página"><button onclick="goToInput()">Ir</button><button id="nextBtn" onclick="goPage(page+1)">Siguiente ›</button><button id="lastBtn" onclick="goPage(250)">Última »</button>
+ </div>
+ <p class="hint">Importante: los 500 registros iniciales son espacios de ejemplo, no afirmaciones de disponibilidad ni de autenticidad de marcas. Antes de publicar, cambia nombres, precios, fotos, descripciones y existencia por tus productos reales.</p>
+</main>
+<footer><strong>BELLA LUXE SHOPPING</strong><br>Elegancia, calidad y estilo en un solo lugar.<br>Pedidos por WhatsApp · Pago contra entrega a coordinar.<br>© <span id="year"></span> Bella Luxe Shopping</footer>
+<div class="overlay" id="overlay" onclick="overlayClick(event)">
+ <aside class="drawer" role="dialog" aria-modal="true" aria-label="Carrito y pedido">
+  <div class="drawer-head"><h2>Tu carrito</h2><button class="close" onclick="closeCart()" aria-label="Cerrar">✕</button></div>
+  <div id="cartItems"></div><div class="total"><span>Total</span><span id="cartTotal">Q0.00</span></div>
+  <div class="checkout-note">Método de pago: <b>contra entrega</b>. El pedido se enviará a WhatsApp para confirmar disponibilidad, dirección, entrega y total final.</div>
+  <div class="form-block"><label for="customerName">Nombre completo *</label><input id="customerName" placeholder="Tu nombre" autocomplete="name"></div>
+  <div class="form-block"><label for="customerPhone">Teléfono de contacto *</label><input id="customerPhone" placeholder="Tu número de teléfono" inputmode="tel"></div>
+  <div class="form-block"><label for="customerAddress">Dirección o lugar de entrega *</label><textarea id="customerAddress" placeholder="Dirección, zona, municipio y referencia"></textarea></div>
+  <div class="form-block"><label for="customerNotes">Notas del pedido (opcional)</label><textarea id="customerNotes" placeholder="Color, talla o indicaciones adicionales"></textarea></div>
+  <button class="send" onclick="sendOrder()">Enviar pedido por WhatsApp</button>
+  <p class="hint">Al tocar el botón, WhatsApp abrirá un mensaje preparado con los productos y tus datos para que lo revises y lo envíes. No se procesa un cobro en línea.</p>
+ </aside>
+</div>
+<script>
+/* EDITA AQUÍ TUS PRODUCTOS REALES: cambia nombre, precio, descripción e imagen.
+   imagen debe ser una URL pública de imagen; déjala vacía si aún no tienes foto. */
+const STORE_WHATSAPP = "50230305348";
+const categories = [
+ {key:"oro", label:"Joyería oro", prefix:"ORO", count:200, names:["Anillo clásico","Cadena fina","Pulsera elegante","Dije corazón","Aretes pequeños","Anillo minimalista","Cadena tipo tejido","Pulsera delicada"]},
+ {key:"plata", label:"Joyería plata", prefix:"PLA", count:150, names:["Anillo de plata","Cadena de plata","Pulsera S925","Aretes brillantes","Dije estrella","Aros clásicos","Pulsera moderna","Collar delicado"]},
+ {key:"maquillaje", label:"Maquillaje original", prefix:"MAQ", count:150, names:["Labial","Brillo labial","Máscara de pestañas","Rubor","Base de maquillaje","Corrector","Paleta de sombras","Delineador"]}
+];
+const productsData = [];
+let n=1;
+categories.forEach(cat=>{
+ for(let i=1;i<=cat.count;i++){
+  const id=cat.prefix+"-"+String(i).padStart(3,"0");
+  productsData.push({id,category:cat.key,categoryLabel:cat.label,name:cat.names[(i-1)%cat.names.length]+" "+String(i).padStart(3,"0"),description:"Agrega aquí la descripción, material, tono o detalles de este producto.",price:0,image:""});
+ }
+});
+/* Puedes personalizar un producto por su código, por ejemplo:
+productsData.find(p=>p.id==="ORO-001").name="Anillo de oro 10k";
+productsData.find(p=>p.id==="ORO-001").price=350;
+productsData.find(p=>p.id==="ORO-001").image="https://tu-imagen-publica.jpg";
+*/
+let page=1, cart={};
+const perPage=2;
+const money=n=>"Q"+Number(n||0).toLocaleString("es-GT",{minimumFractionDigits:2,maximumFractionDigits:2});
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function filtered(){const q=document.getElementById("search").value.trim().toLowerCase(), c=document.getElementById("category").value;return productsData.filter(p=>(c==="all"||p.category===c)&&(!q||[p.name,p.id,p.categoryLabel,p.description].join(" ").toLowerCase().includes(q)))}
+function render(){
+ const list=filtered(), pages=Math.max(1,Math.ceil(list.length/perPage));page=Math.min(Math.max(1,page),pages);
+ const slice=list.slice((page-1)*perPage,page*perPage), root=document.getElementById("products");
+ root.innerHTML=slice.length?slice.map(p=>`<article class="product"><div class="product-art">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}" onerror="this.style.display='none'">`:`<div class="placeholder">B L</div>`}<span class="category-tag">${esc(p.categoryLabel)}</span></div><div class="product-body"><span class="small">Código: ${esc(p.id)}</span><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p><div class="product-bottom"><div><div class="price">${Number(p.price)>0?money(p.price):"Precio por agregar"}</div><span class="small">Pago contra entrega</span></div><button class="add" onclick="addToCart('${p.id}')">＋ Agregar al carrito</button></div></div></article>`).join(""):`<div class="empty">No encontramos productos con esa búsqueda. Prueba con otro nombre o código.</div>`;
+ document.getElementById("resultsLabel").textContent=list.length?`Mostrando productos ${(page-1)*perPage+1}–${Math.min(page*perPage,list.length)} de ${list.length}`:"0 productos encontrados";
+ document.getElementById("pageInfo").textContent=`Página ${page} de ${pages}`;
+ document.getElementById("pageInput").max=pages;document.getElementById("pageInput").value=page;
+ ["firstBtn","prevBtn"].forEach(id=>document.getElementById(id).disabled=page===1);
+ ["nextBtn","lastBtn"].forEach(id=>document.getElementById(id).disabled=page===pages);
+}
+function goPage(p){const pages=Math.max(1,Math.ceil(filtered().length/perPage));page=Math.min(pages,Math.max(1,Number(p)||1));render();document.querySelector(".tools").scrollIntoView({behavior:"smooth",block:"start"})}
+function goToInput(){goPage(Number(document.getElementById("pageInput").value))}
+function clearSearch(){document.getElementById("search").value="";document.getElementById("category").value="all";page=1;render()}
+document.getElementById("search").addEventListener("input",()=>{page=1;render()});
+document.getElementById("category").addEventListener("change",()=>{page=1;render()});
+function addToCart(id){cart[id]=(cart[id]||0)+1;updateCart();openCart()}
+function updateCart(){
+ const entries=Object.entries(cart).filter(([id,q])=>q>0),count=entries.reduce((s,[id,q])=>s+q,0);
+ document.getElementById("cartCount").textContent=count;
+ document.getElementById("cartTotal").textContent=money(entries.reduce((s,[id,q])=>{const p=productsData.find(x=>x.id===id);return s+(p?Number(p.price)*q:0)},0));
+ const root=document.getElementById("cartItems");
+ root.innerHTML=entries.length?entries.map(([id,q])=>{const p=productsData.find(x=>x.id===id);return `<div class="cart-row"><div><strong>${esc(p.name)}</strong><small>${esc(id)} · ${p.price>0?money(p.price):"Precio por confirmar"}</small><div class="qty"><button onclick="changeQty('${id}',-1)">−</button><span>${q}</span><button onclick="changeQty('${id}',1)">＋</button><button class="remove" onclick="removeItem('${id}')">Quitar</button></div></div><b>${p.price>0?money(p.price*q):"—"}</b></div>`}).join(""):`<div class="empty">Tu carrito está vacío. Agrega productos del catálogo para comenzar.</div>`;
+}
+function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCart()}
+function removeItem(id){delete cart[id];updateCart()}
+function openCart(){document.getElementById("overlay").classList.add("open");document.body.style.overflow="hidden";updateCart()}
+function closeCart(){document.getElementById("overlay").classList.remove("open");document.body.style.overflow=""}
+function overlayClick(e){if(e.target.id==="overlay")closeCart()}
+function sendOrder(){
+ const entries=Object.entries(cart).filter(([id,q])=>q>0);
+ if(!entries.length){alert("Agrega al menos un producto al carrito.");return}
+ const name=document.getElementById("customerName").value.trim(),phone=document.getElementById("customerPhone").value.trim(),address=document.getElementById("customerAddress").value.trim(),notes=document.getElementById("customerNotes").value.trim();
+ if(!name||!phone||!address){alert("Completa tu nombre, teléfono y dirección de entrega.");return}
+ const total=entries.reduce((s,[id,q])=>{const p=productsData.find(x=>x.id===id);return s+(p?Number(p.price)*q:0)},0);
+ const lines=entries.map(([id,q])=>{const p=productsData.find(x=>x.id===id);return `• ${p.name} (${id}) x${q} — ${p.price>0?money(p.price*q):"precio por confirmar"}`});
+ const message=`✨ *NUEVO PEDIDO - BELLA LUXE SHOPPING* ✨\n\n*Cliente:* ${name}\n*Teléfono:* ${phone}\n*Entrega:* ${address}\n\n*Productos:*\n${lines.join("\n")}\n\n*Total calculado:* ${total>0?money(total):"Pendiente de confirmar precios"}\n*Pago:* Contra entrega (coordinar)\n${notes?`\n*Notas:* ${notes}\n`:""}\n\nHola, deseo confirmar disponibilidad y detalles de entrega de este pedido.`;
+ window.open(`https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(message)}`,"_blank","noopener");
+}
+document.getElementById("year").textContent=new Date().getFullYear();render();updateCart();
+</script>
+</body>
+</html>
